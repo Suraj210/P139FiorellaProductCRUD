@@ -1,0 +1,35 @@
+﻿
+@model List<Product>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- PRODUCTS START -->
+
+<section id="products">
+    <div class="container">
+
+        <h1 class="my-3 text-center">Products</h1>
+        <div class="row parent-elem" data-count="@ViewBag.ProductCount">
+
+        <partial name="_ProductsPartial" model="@Model" />
+
+        </div>
+
+        <div class="show-more d-flex justify-content-center w-100">
+            <button class="btn-primary btn mt-5">Show More</button>
+        </div>
+        <div class="show-less d-flex justify-content-center w-100">
+            <button class="btn-danger btn mt-5 d-none">Show Less</button>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS END -->
+
+@section script{
+    <script src="~/js/shop.js"></script>
+    <script src="~/js/basket.js"></script>
+}

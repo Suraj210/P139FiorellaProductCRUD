@@ -1,0 +1,50 @@
+﻿@model SliderInfos
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+
+    <a class="btn btn-success text-white mt-5" asp-action="Create">Create</a>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Signature
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                    <tr>
+                        <td class="py-1">
+                            <img src="~/img/@Model.Signature" alt="image" />
+                        </td>
+                        
+                        <td>
+
+                            @Model.Title
+                        </td>
+                        <td>
+                            @Model.Description                       
+                        </td>
+
+                        <td>
+                            <a class="btn btn-outline-dark" asp-action="Detail" asp-route-id="@Model.Id">Detail</a>
+                            <a class="btn btn-outline-primary mx-3" asp-action="Update" asp-route-id="@Model.Id">Update</a>
+                            <a class="btn btn-outline-warning">Remove</a>
+                        </td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+

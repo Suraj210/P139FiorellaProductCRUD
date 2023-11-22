@@ -1,0 +1,57 @@
+﻿@model IEnumerable<SliderImg>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+
+    <a class="btn btn-success text-white mt-5" asp-action="Create">Create</a>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Operations
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    
+                <tr>
+                    <td class="py-1">
+                        <img src="~/img/@item.Img" alt="image" />
+                    </td>
+                    <td>
+
+                            @if (item.Status)
+                            {
+
+                                <div class="status-on" style="width:20px; height:20px; border-radius:50%; background-color:green; cursor:pointer;"></div>
+                            }
+                            else
+                            {     
+                                <div class="status-off" style="width:20px; height:20px; border-radius:50%; background-color:red; cursor:pointer;"></div>
+                            }
+                    </td>
+                    <td>
+                            <a class="btn btn-outline-dark" asp-action="Detail" asp-route-id="@item.Id">Detail</a>
+                            <a class="btn btn-outline-primary mx-4" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                        <a class="btn btn-outline-warning">Remove</a>
+                    </td>
+                </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

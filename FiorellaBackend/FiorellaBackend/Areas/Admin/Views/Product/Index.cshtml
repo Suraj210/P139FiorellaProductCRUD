@@ -1,0 +1,88 @@
+﻿@model List<ProductVM>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+
+    <a class="btn btn-success text-white mt-5" asp-action="Create">Create</a>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Category
+                    </th>
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var product in Model)
+                {
+                    
+                <tr>
+                    <td class="py-1">
+                            @if(product.Image is not null)
+                            {
+                                
+                            <img src="~/img/@product.Image" alt="image" />
+                            }
+                    </td>
+
+                    <td>
+
+                        @product.Name
+                    </td>
+                    <td>
+                            @product.Description
+                    </td>
+                        <td>
+                            @product.Price
+                        </td>
+
+                        <td>
+                            @product.CategoryName
+                        </td>
+
+                    <td>
+                        <a class="btn btn-outline-dark" asp-action="Detail" asp-route-id="@product.Id">Detail</a>
+                        <a class="btn btn-outline-primary mx-3" asp-action="Update" asp-route-id="@product.Id">Update</a>
+                        <a class="btn btn-outline-warning">Remove</a>
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+
+    <nav class="d-flex justify-content-center mt-3" aria-label="...">
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active">
+                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+

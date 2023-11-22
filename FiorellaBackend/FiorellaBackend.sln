@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiorellaBackend", "FiorellaBackend\FiorellaBackend.csproj", "{A7733F2A-6B31-4A70-BCFA-49C9B67EA153}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7733F2A-6B31-4A70-BCFA-49C9B67EA153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7733F2A-6B31-4A70-BCFA-49C9B67EA153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7733F2A-6B31-4A70-BCFA-49C9B67EA153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7733F2A-6B31-4A70-BCFA-49C9B67EA153}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B7DC629-A505-431E-82AE-F97CB2A3B6C2}
+	EndGlobalSection
+EndGlobal

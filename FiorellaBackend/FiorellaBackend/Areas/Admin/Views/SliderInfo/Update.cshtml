@@ -1,0 +1,36 @@
+﻿@model SliderInfos
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="container mt-5">
+
+    <h4 >Signature:</h4>
+    <div class="signature">
+         <img style="width:100px; height:100px" src="~/img/@Model.Signature" />
+    </div>
+    <h4 class="my-3">Title:</h4>
+    <p>@Model.Title</p>
+    <h4 class="my-3">Description:</h4>
+    <p>@Model.Description</p>
+    <a class="btn btn-outline-info mt-3" asp-action="Index">Back</a>
+
+    <form class="forms-sample my-5">
+        <div class="form-group">
+            <label for="exampleInputUsername1">Add a new signature</label>
+            <input type="file" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputUsername1">Write a new title</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputUsername1">Write a Description</label>
+            <textarea class="form-control"></textarea>
+        </div>
+        <a type="submit" class="btn btn-primary mr-2">Submit</a>
+        <a class="btn btn-light" asp-action="Index">Cancel</a>
+    </form>
+</div>
+
+

@@ -1,0 +1,68 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<style>
+
+    .product-detail {
+        max-width: 600px;
+        margin: auto;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+        .product-detail img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+    .product-info {
+        margin-bottom: 20px;
+    }
+
+        .product-info h2 {
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: #666;
+        }
+
+    .product-actions {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .product-image{
+        width:200px;
+    }
+
+    .active-product{
+        border: 3px solid greenyellow;
+    }
+</style>
+
+<div class="container product-detail">
+    @if(Model.Images.Count() != 0)
+    {
+        foreach (var item in Model.Images)
+        {
+             <img class="product-image @(item.IsMain ? "active-product" : "")" src="~/img/@item.Image" alt="Product Image">
+        }
+    }
+    <div class="product-info">
+        <h2>@Model.Name</h2>
+        <p>@Model.Description</p>
+        <p>@Model.Category.Name</p>
+        <p>Price: $@Model.Price</p>
+    </div>
+    <div class="product-actions">
+        <a class="btn btn-info text-white" asp-action="Index">Back</a>
+    </div>
+</div>
+
