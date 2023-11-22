@@ -1,4 +1,6 @@
-﻿using FiorellaBackend.Data;
+﻿using AutoMapper;
+using FiorellaBackend.Areas.Admin.ViewModels.Category;
+using FiorellaBackend.Data;
 using FiorellaBackend.Models;
 using FiorellaBackend.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -8,10 +10,13 @@ namespace FiorellaBackend.Services
     public class CategoryService:ICategoryService
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CategoryService(AppDbContext context)
+
+        public CategoryService(AppDbContext context,IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public async Task CreateAsync(Category category)
@@ -74,6 +79,21 @@ namespace FiorellaBackend.Services
         public async Task<List<ArchiveCategory>> GetCategoryArchivesAsync()
         {
             return await _context.ArchiveCategories.ToListAsync();
+        }
+
+        public async Task<List<CategoryVM>> GetPaginatedDatasAsync(int page, int take)
+        {
+            List<Category> categories = await _context.Categories.Skip((page*take)-take).Take(take).ToListAsync();
+
+
+            return _mapper.Map<List<CategoryVM>>(categories);
+
+
+        }
+
+        public async Task<int> GetCountAsync()
+        {
+            return await _context.Categories.CountAsync();
         }
     }
 }

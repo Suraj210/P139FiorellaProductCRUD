@@ -1,4 +1,5 @@
 ﻿using FiorellaBackend.Models;
+using FiorellaBackend.Areas.Admin.ViewModels.Category;
 
 namespace FiorellaBackend.Services.Interfaces
 {
@@ -21,5 +22,9 @@ namespace FiorellaBackend.Services.Interfaces
         Task<List<ArchiveCategory>> GetCategoryArchivesAsync();
 
         Task ExtractAsync(Category category);
+
+        Task<List<CategoryVM>> GetPaginatedDatasAsync(int page, int take);
+
+        Task<int> GetCountAsync();
     }
 }

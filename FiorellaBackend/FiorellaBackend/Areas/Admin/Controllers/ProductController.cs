@@ -1,4 +1,5 @@
 ﻿using FiorellaBackend.Areas.Admin.ViewModels.Product;
+using FiorellaBackend.Helpers;
 using FiorellaBackend.Models;
 using FiorellaBackend.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -19,12 +20,22 @@ namespace FiorellaBackend.Areas.Admin.Controllers
         public async Task<IActionResult> Index(int page=1,int take=4)
         {
 
-            List<ProductVM> paginatedDatas =await _productService.GetPaginatedDatasAsync(page, take);
+            List<ProductVM> dbPaginatedDatas =await _productService.GetPaginatedDatasAsync(page, take);
 
-            int pageeCount = await _productService.GetCountAsync();
 
-            ViewBag.count = pageeCount/take;
+            int pageCount =await GetPageCountAsync(take);
+
+            Paginate<ProductVM> paginatedDatas=new(dbPaginatedDatas,page,pageCount);
             return View(paginatedDatas);
+        }
+
+        private async Task<int> GetPageCountAsync(int take)
+        {
+            int pageCount = await _productService.GetCountAsync();
+
+            var result = (int)Math.Ceiling((decimal)(pageCount) / take);
+
+            return result;
         }
 
         [HttpGet]
@@ -39,6 +50,14 @@ namespace FiorellaBackend.Areas.Admin.Controllers
 
             return View(product);
 
+        }
+
+
+        [HttpGet]
+
+        public async Task<IActionResult> Create()
+        {
+            return View();
         }
     }
 }

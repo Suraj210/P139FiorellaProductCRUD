@@ -51,8 +51,9 @@ namespace FiorellaBackend.Services
 
         public async Task<List<ProductVM>> GetPaginatedDatasAsync(int page, int take)
         {
-            List<Product> products= await _context.Products.Where(m => !m.SoftDeleted)
+            List<Product> products= await _context.Products
                                         .Include(m => m.Images)
+                                        .Include(m=>m.Category)
                                         .Skip((page*take)-take)
                                         .Take(take)
                                         .ToListAsync();

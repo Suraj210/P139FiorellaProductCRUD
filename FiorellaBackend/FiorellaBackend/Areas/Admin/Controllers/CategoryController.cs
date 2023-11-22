@@ -1,5 +1,9 @@
-﻿using FiorellaBackend.Data;
+﻿using FiorellaBackend.Areas.Admin.ViewModels.Category;
+using FiorellaBackend.Areas.Admin.ViewModels.Product;
+using FiorellaBackend.Data;
+using FiorellaBackend.Helpers;
 using FiorellaBackend.Models;
+using FiorellaBackend.Services;
 using FiorellaBackend.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,16 +20,25 @@ namespace FiorellaBackend.Areas.Admin.Controllers
         {
             _categoryService = categoryService;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, int take = 3)
         {
-            return View(await _categoryService.GetAllAsync());
+
+            List<CategoryVM> dbPaginatedDatas = await _categoryService.GetPaginatedDatasAsync(page, take);
+
+
+            int pageCount = await GetPageCountAsync(take);
+
+            Paginate<CategoryVM> paginatedDatas = new(dbPaginatedDatas, page, pageCount);
+            return View(paginatedDatas);
         }
 
-
-        [HttpGet]
-        public async Task<IActionResult> Create()
+        private async Task<int> GetPageCountAsync(int take)
         {
-            return View();
+            int pageCount = await _categoryService.GetCountAsync();
+
+            var result = (int)Math.Ceiling((decimal)(pageCount) / take);
+
+            return result;
         }
 
 
