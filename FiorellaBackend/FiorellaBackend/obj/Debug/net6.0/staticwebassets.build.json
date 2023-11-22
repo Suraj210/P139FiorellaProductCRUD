@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "q/qelpKUs2MYri7Iy2W3/wKQXXPbrb5fPgZcWlPz9xg=",
+  "Hash": "d7Z5Cej3gxguP0XEbKK7WJ2DDkGUjMYUhGFBno0/uBU=",
   "Source": "FiorellaBackend",
   "BasePath": "_content/FiorellaBackend",
   "Mode": "Default",
@@ -29920,6 +29920,40 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css.map"
     },
     {
+      "Identity": "C:\\Users\\acer\\Desktop\\P139\\Back End\\P139FiorellaProductCRUD\\FiorellaBackend\\FiorellaBackend\\wwwroot\\img\\1bc84927-8366-4e0f-83f4-e90a31deaaf6-03.jpg",
+      "SourceId": "FiorellaBackend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Desktop\\P139\\Back End\\P139FiorellaProductCRUD\\FiorellaBackend\\FiorellaBackend\\wwwroot\\",
+      "BasePath": "_content/FiorellaBackend",
+      "RelativePath": "img/1bc84927-8366-4e0f-83f4-e90a31deaaf6-03.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\1bc84927-8366-4e0f-83f4-e90a31deaaf6-03.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\acer\\Desktop\\P139\\Back End\\P139FiorellaProductCRUD\\FiorellaBackend\\FiorellaBackend\\wwwroot\\img\\93dc4d9e-e4bf-4bc1-89b2-ab5cffc4d217-02.jpg",
+      "SourceId": "FiorellaBackend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Desktop\\P139\\Back End\\P139FiorellaProductCRUD\\FiorellaBackend\\FiorellaBackend\\wwwroot\\",
+      "BasePath": "_content/FiorellaBackend",
+      "RelativePath": "img/93dc4d9e-e4bf-4bc1-89b2-ab5cffc4d217-02.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\93dc4d9e-e4bf-4bc1-89b2-ab5cffc4d217-02.jpg"
+    },
+    {
       "Identity": "C:\\Users\\acer\\Desktop\\P139\\Back End\\P139FiorellaProductCRUD\\FiorellaBackend\\FiorellaBackend\\wwwroot\\img\\blog-feature-img-1.jpg",
       "SourceId": "FiorellaBackend",
       "SourceType": "Discovered",
@@ -29969,6 +30003,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\blog-feature-img-4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\acer\\Desktop\\P139\\Back End\\P139FiorellaProductCRUD\\FiorellaBackend\\FiorellaBackend\\wwwroot\\img\\c4b54f12-db5e-43ab-8db6-615aa78aaf55-01.jpg",
+      "SourceId": "FiorellaBackend",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\acer\\Desktop\\P139\\Back End\\P139FiorellaProductCRUD\\FiorellaBackend\\FiorellaBackend\\wwwroot\\",
+      "BasePath": "_content/FiorellaBackend",
+      "RelativePath": "img/c4b54f12-db5e-43ab-8db6-615aa78aaf55-01.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\c4b54f12-db5e-43ab-8db6-615aa78aaf55-01.jpg"
     },
     {
       "Identity": "C:\\Users\\acer\\Desktop\\P139\\Back End\\P139FiorellaProductCRUD\\FiorellaBackend\\FiorellaBackend\\wwwroot\\img\\favicon.png",

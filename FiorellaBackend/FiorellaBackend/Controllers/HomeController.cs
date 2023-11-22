@@ -27,7 +27,7 @@ namespace FiorellaBackend.Controllers
             List<SliderImg> sliderImg =await _context.SliderImgs.ToListAsync();
             SliderInfos sliderInfo = await _context.SliderInfos.FirstOrDefaultAsync();
             List<Blog> blog = await _context.Blogs.Where(m => !m.SoftDeleted).ToListAsync();
-            List<Product> product = await _productService.GetAllByTakeWithImagesAsync(8);
+            List<Product> product = await _productService.GetAllByTakeWithImagesAsync(12);
             List<Category> categories= await _context.Categories.Where(m=>!m.SoftDeleted).ToListAsync();
             AboutMain aboutMain = await _context.AboutMains.Where(m=>!m.SoftDeleted).FirstOrDefaultAsync();
             List<AboutFeature> aboutFeatures= await _context.AboutFeatures.Where(m => !m.SoftDeleted).ToListAsync();

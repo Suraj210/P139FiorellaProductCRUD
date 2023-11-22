@@ -41,6 +41,12 @@ namespace FiorellaBackend.Areas.Admin.Controllers
             return result;
         }
 
+        [HttpGet]
+
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]

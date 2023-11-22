@@ -1,32 +1,38 @@
-﻿
+﻿@model ProductCreateVM
 @{
     ViewData["Title"] = "Create";
 }
 
-<form class="forms-sample my-5">
+<form class="forms-sample my-5" method="post" asp-action="Create" enctype="multipart/form-data">
     <div class="form-group">
-        <label for="exampleInputUsername1">Add Images</label>
-        <input type="file" class="form-control">
+        <label asp-for="Photos">Add Images</label>
+        <input asp-for="Photos" class="form-control">
+        <span class="text-danger" asp-validation-for="Photos"></span>
+
     </div>
     <div class="form-group">
-        <label for="exampleInputUsername1">Add a Name</label>
-        <input type="text" class="form-control">
+        <label asp-for="Name">Add a Name</label>
+        <input asp-for="Name" class="form-control">
+        <span class="text-danger" asp-validation-for="Name"></span>
+
     </div>
     <div class="form-group">
-        <label for="exampleInputUsername1">Add a Description</label>
-        <textarea class="form-control"></textarea>
+        <label asp-for="Description">Add a Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span class="text-danger" asp-validation-for="Description"></span>
+
     </div>
     <div class="form-group">
-        <label for="exampleInputUsername1">Add a Price</label>
-        <input type="text" class="form-control">
+        <label asp-for="Price">Add a Price</label>
+        <input asp-for="Price" class="form-control">
+        <span class="text-danger" asp-validation-for="Price"></span>
+
     </div>
     <div class="form-group">
-        <label for="exampleInputUsername1">Add a Category</label>
-        <select>
-            <option>1</option>
-        </select>
+        <label asp-for="CategoryId">Choose a Category</label>
+        <select asp-for="CategoryId" asp-items="@ViewBag.categories" class="form-control"> </select>
     </div>
-    <a type="submit" class="btn btn-primary mr-2">Submit</a>
+    <button type="submit" class="btn btn-primary mr-2">Submit</button>
     <a class="btn btn-light" asp-action="Index">Cancel</a>
 </form>
 
