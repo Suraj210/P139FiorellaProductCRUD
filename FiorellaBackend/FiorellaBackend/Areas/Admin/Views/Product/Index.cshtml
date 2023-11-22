@@ -60,7 +60,9 @@
                     <td>
                         <a class="btn btn-outline-dark" asp-action="Detail" asp-route-id="@product.Id">Detail</a>
                         <a class="btn btn-outline-primary mx-3" asp-action="Update" asp-route-id="@product.Id">Edit</a>
-                        <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                            <form class="d-inline-block" method="post">
+                                <button type="submit" class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@product.Id">Delete</button>
+                            </form>
                     </td>
                 </tr>
                 }

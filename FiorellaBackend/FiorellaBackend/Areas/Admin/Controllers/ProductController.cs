@@ -139,5 +139,15 @@ namespace FiorellaBackend.Areas.Admin.Controllers
         {
             return new SelectList(await _categoryService.GetAllAsync(), "Id", "Name");
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _productService.DeleteAsync(id);
+            return RedirectToAction("Index");
+
+        }
+
     }
 }

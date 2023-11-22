@@ -15,5 +15,7 @@ namespace FiorellaBackend.Services.Interfaces
         Task<List<ProductVM>> GetPaginatedDatasAsync(int page, int take);
 
         Task<int> GetCountAsync();
+
+        Task DeleteAsync(int id);
     }
 }

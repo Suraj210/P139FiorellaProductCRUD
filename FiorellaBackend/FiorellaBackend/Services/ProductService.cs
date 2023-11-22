@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FiorellaBackend.Areas.Admin.ViewModels.Product;
 using FiorellaBackend.Data;
+using FiorellaBackend.Helpers.Extentions;
 using FiorellaBackend.Models;
 using FiorellaBackend.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +13,34 @@ namespace FiorellaBackend.Services
 
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IWebHostEnvironment _env;
 
-        public ProductService(AppDbContext context,IMapper mapper)
+        public ProductService(AppDbContext context,IMapper mapper, IWebHostEnvironment env)
         {
             _context = context;
             _mapper = mapper;
+            _env = env;
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            Product product = await _context.Products.Where(m => m.Id == id).Include(m=>m.Category).Include(m=>m.Images).FirstOrDefaultAsync();
+           
+
+            foreach (var item in product.Images)
+            {
+
+                string path = _env.GetFilePath("img/", item.Image);
+
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+            }
+
+
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<List<ProductVM>> GetAllAsync()
